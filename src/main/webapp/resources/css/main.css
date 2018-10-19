@@ -1,0 +1,17 @@
+body {
+    background-color: #f6f6f6;
+}
+
+.card {
+    margin-top: 15px;
+}
+
+.pet{
+    width: 200px;
+    height: 280px;
+    margin: 0 0 10px 16px;
+}
+
+.pet-price{
+    color: #0084ff;
+}
