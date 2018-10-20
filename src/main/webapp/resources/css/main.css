@@ -15,3 +15,17 @@ body {
 .pet-price{
     color: #0084ff;
 }
+
+#sort a{
+    color: rgba(0,0,0,.5);
+    text-decoration: none;
+    margin-right: 20px;
+}
+
+#sort a:hover{
+    color: rgba(0,0,0,.9);
+}
+
+#sort a:active{
+    color: rgba(0,0,0,.9);
+}
