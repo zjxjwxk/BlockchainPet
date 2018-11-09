@@ -26,14 +26,29 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">我的狗窝</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="exam.jsp">答题赚微积分</a>
+                    </li>
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item">
                         <a class="nav-link" href="register.jsp">注册</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">登陆</a>
+                    <%
+                        if (session.getAttribute("username") != null) {
+                    %>
+                    <li class="nav-item active">
+                        <a class="nav-link"><%=session.getAttribute("username")%></a>
                     </li>
+                    <%
+                    } else {
+                    %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.jsp">登陆</a>
+                    </li>
+                    <%
+                        }
+                    %>
                 </ul>
             </div>
         </div>
@@ -41,7 +56,7 @@
     <div class="container">
         <div class="card">
             <div class="card-header" style="background-color: #fff">
-                <b>排序</b>
+                <b>狗狗集市</b>
                 <div class="float-right" id="sort">
                     <a href="#">稀有度 <i class="fas fa-sort"></i></a>
                     <a href="#">价格 <i class="fas fa-sort"></i></a>
