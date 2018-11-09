@@ -3,7 +3,8 @@ body {
 }
 
 .card {
-    margin-top: 15px;
+    margin: 15px 0;
+    padding-bottom: 30px;
 }
 
 .pet{
@@ -28,4 +29,8 @@ body {
 
 #sort a:active{
     color: rgba(0,0,0,.9);
+}
+
+#forget a{
+    text-decoration: none;
 }
