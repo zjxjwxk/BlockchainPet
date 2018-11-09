@@ -26,14 +26,29 @@
                     <li class="nav-item">
                         <a class="nav-link" href="#">我的狗窝</a>
                     </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="exam.jsp">答题赚微积分</a>
+                    </li>
                 </ul>
                 <ul class="navbar-nav">
                     <li class="nav-item active">
                         <a class="nav-link" href="register.jsp">注册</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">登陆</a>
+                    <%
+                        if (session.getAttribute("username") != null) {
+                    %>
+                    <li class="nav-item active">
+                        <a class="nav-link"><%=session.getAttribute("username")%></a>
                     </li>
+                    <%
+                    } else {
+                    %>
+                    <li class="nav-item">
+                        <a class="nav-link" href="login.jsp">登陆</a>
+                    </li>
+                    <%
+                        }
+                    %>
                 </ul>
             </div>
         </div>
@@ -45,7 +60,7 @@
             </div>
             <div class="card-body">
                 <div class="container" style="width: 500px;">
-                    <form id="register-form">
+                    <form>
                         <div class="form-group">
                             <label for="username">用户名</label>
                             <input type="text" class="form-control" id="username" aria-describedby="userHelp" placeholder="请输入用户名">
