@@ -2,16 +2,6 @@
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-<%
-    String loginErrorMessage = (String) request.getAttribute("loginError");
-    if (loginErrorMessage != null) {
-%>
-    <script type="text/javascript">
-        alert("<%=loginErrorMessage %>");
-    </script>
-<%
-    }
-%>
 <%@page contentType="text/html; charset=utf-8" %>
 <!DOCTYPE html>
 <html>
@@ -63,9 +53,9 @@
                         </div>
                     </li>
                     <%
-                        } else {
+                    } else {
                     %>
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="login.jsp">登陆</a>
                     </li>
                     <%
@@ -78,32 +68,16 @@
     <div class="container">
         <div class="card">
             <div class="card-header" style="background-color: #fff">
-                <b>登陆</b>
+                <b>个人中心</b>
+
             </div>
             <div class="card-body">
-                <div class="container" style="width: 500px;">
-                    <form id="login-form" action="login.do">
-                        <div class="form-group">
-                            <label for="username">用户名</label>
-                            <input type="text" class="form-control" id="username" name="username" aria-describedby="userHelp" placeholder="请输入用户名">
-                        </div>
-                        <div class="form-group">
-                            <label for="password">密码</label>
-                            <input type="password" class="form-control" id="password" name="password" aria-describedby="passwordHelp" placeholder="请输入用户密码">
-                        </div>
-                        <div class="form-group" id="forget">
-                            <a href="#">忘记密码</a>&nbsp;&nbsp;
-                            <a href="register.jsp">立即注册</a>
-                        </div>
-                        <button type="submit" class="btn btn-primary" onclick="return login()">登陆</button>
-                    </form>
-                </div>
+
             </div>
         </div>
     </div>
     <script src="resources/js/jquery.min.js"></script>
     <script src="resources/js/bootstrap.min.js"></script>
-    <script src="resources/js/login.js"></script>
 </body>
 
 </html>

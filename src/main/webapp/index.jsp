@@ -1,3 +1,7 @@
+<%
+    String path = request.getContextPath();
+    String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+%>
 <%@page contentType="text/html; charset=utf-8" %>
 <!DOCTYPE html>
 <html>
@@ -27,6 +31,9 @@
                         <a class="nav-link" href="#">我的狗窝</a>
                     </li>
                     <li class="nav-item">
+                        <a class="nav-link" href="receive.jsp">免费领养</a>
+                    </li>
+                    <li class="nav-item">
                         <a class="nav-link" href="exam.jsp">答题赚微积分</a>
                     </li>
                 </ul>
@@ -37,8 +44,13 @@
                     <%
                         if (session.getAttribute("username") != null) {
                     %>
-                    <li class="nav-item active">
-                        <a class="nav-link"><%=session.getAttribute("username")%></a>
+                    <li class="nav-item dropdown active">
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" href="" aria-haspopup="true" aria-expanded="false"><%=session.getAttribute("username")%></a>
+                        <div class="dropdown-menu">
+                            <a class="dropdown-item" href="profile.jsp">个人中心</a>
+                            <div class="dropdown-divider"></div>
+                            <a class="dropdown-item" href="<%=basePath + "exit.do"%>">退出</a>
+                        </div>
                     </li>
                     <%
                     } else {
