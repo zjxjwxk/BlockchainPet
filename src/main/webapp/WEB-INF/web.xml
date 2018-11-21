@@ -15,11 +15,29 @@
   </servlet-mapping>
 
   <servlet>
+    <servlet-name>ExitServlet</servlet-name>
+    <servlet-class>servlet.ExitServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ExitServlet</servlet-name>
+    <url-pattern>/exit.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
     <servlet-name>ExamServlet</servlet-name>
     <servlet-class>servlet.ExamServlet</servlet-class>
   </servlet>
   <servlet-mapping>
     <servlet-name>ExamServlet</servlet-name>
     <url-pattern>/exam.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>ReceiveServlet</servlet-name>
+    <servlet-class>servlet.ReceiveServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ReceiveServlet</servlet-name>
+    <url-pattern>/receive.do</url-pattern>
   </servlet-mapping>
 </web-app>
