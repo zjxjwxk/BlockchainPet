@@ -4,7 +4,7 @@
 
 <web-app>
   <display-name>Archetype Created Web Application</display-name>
-  
+
   <servlet>
     <servlet-name>LoginServlet</servlet-name>
     <servlet-class>servlet.LoginServlet</servlet-class>
@@ -40,4 +40,22 @@
     <servlet-name>ReceiveServlet</servlet-name>
     <url-pattern>/receive.do</url-pattern>
   </servlet-mapping>
+  
+   <servlet>
+     <servlet-name>EmailServlet</servlet-name>
+     <servlet-class>servlet.EmailServlet</servlet-class>
+     <init-param>
+       <param-name>username</param-name>
+       <param-value>wuxinkang</param-value>
+     </init-param>
+     <init-param>
+       <param-name>email</param-name>
+       <param-value>zjxjwxk@gmail.com</param-value>
+     </init-param>
+     <load-on-startup>1</load-on-startup>
+   </servlet>
+   <servlet-mapping>
+     <servlet-name>EmailServlet</servlet-name>
+     <url-pattern>/email.do</url-pattern>
+   </servlet-mapping>
 </web-app>
