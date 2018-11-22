@@ -1,6 +1,10 @@
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
+
+    if (session.getAttribute("username") == null) {
+        response.sendRedirect("login.jsp");
+    }
 %>
 <%@page contentType="text/html; charset=utf-8" %>
 <!DOCTYPE html>
@@ -69,10 +73,101 @@
         <div class="card">
             <div class="card-header" style="background-color: #fff">
                 <b>个人中心</b>
-
             </div>
             <div class="card-body">
-
+                <div id="profile-avatar" class="media">
+                    <img id="avatar" class="mr-3" src="resources/img/12.png" alt="Generic placeholder image">
+                    <div class="media-body">
+                        <h5 class="mt-0"><%= session.getAttribute("username") %></h5>
+                        1000微积分
+                    </div>
+                </div>
+                <ul class="nav nav-tabs" role="tablist">
+                    <li class="nav-item">
+                        <a class="nav-link active" data-toggle="tab" href="#my-pets" role="tab">我的狗狗</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#my-order" role="tab">我的订单</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" data-toggle="tab" href="#my-email" role="tab">我的密保邮箱</a>
+                    </li>
+                </ul>
+                <div class="tab-content">
+                    <div class="tab-pane fade show active" id="my-pets" role="tabpanel">
+                        <div class="row">
+                            <div class="card pet">
+                                <img class="card-img-top" src="resources/img/1.png">
+                                <div class="card-body">
+                                    <span class="badge badge-primary">普通</span>
+                                    <span class="badge badge-light">第0代</span>
+                                    <div>宠物1号</div>
+                                    <div class="text-blue">1999.00微</div>
+                                </div>
+                            </div>
+                            <div class="card pet">
+                                <img class="card-img-top" src="resources/img/1.png">
+                                <div class="card-body">
+                                    <span class="badge badge-primary">普通</span>
+                                    <span class="badge badge-light">第0代</span>
+                                    <div>宠物1号</div>
+                                    <div class="text-blue">1999.00微</div>
+                                </div>
+                            </div>
+                            <div class="card pet">
+                                <img class="card-img-top" src="resources/img/1.png">
+                                <div class="card-body">
+                                    <span class="badge badge-primary">普通</span>
+                                    <span class="badge badge-light">第0代</span>
+                                    <div>宠物1号</div>
+                                    <div class="text-blue">1999.00微</div>
+                                </div>
+                            </div>
+                            <div class="card pet">
+                                <img class="card-img-top" src="resources/img/1.png">
+                                <div class="card-body">
+                                    <span class="badge badge-primary">普通</span>
+                                    <span class="badge badge-light">第0代</span>
+                                    <div>宠物1号</div>
+                                    <div class="text-blue">1999.00微</div>
+                                </div>
+                            </div>
+                            <div class="card pet">
+                                <img class="card-img-top" src="resources/img/1.png">
+                                <div class="card-body">
+                                    <span class="badge badge-primary">普通</span>
+                                    <span class="badge badge-light">第0代</span>
+                                    <div>宠物1号</div>
+                                    <div class="text-blue">1999.00微</div>
+                                </div>
+                            </div>
+                            <div class="card pet">
+                                <img class="card-img-top" src="resources/img/1.png">
+                                <div class="card-body">
+                                    <span class="badge badge-primary">普通</span>
+                                    <span class="badge badge-light">第0代</span>
+                                    <div>宠物1号</div>
+                                    <div class="text-blue">1999.00微</div>
+                                </div>
+                            </div>
+                            <div class="card pet">
+                                <img class="card-img-top" src="resources/img/1.png">
+                                <div class="card-body">
+                                    <span class="badge badge-primary">普通</span>
+                                    <span class="badge badge-light">第0代</span>
+                                    <div>宠物1号</div>
+                                    <div class="text-blue">1999.00微</div>
+                                </div>
+                            </div>
+                        </div>
+                    </div>
+                    <div class="tab-pane fade" id="my-order" role="tabpanel"></div>
+                    <div class="tab-pane fade" id="my-email" role="tabpanel">
+                        <div id="my-email-div">
+                            <a class="btn btn-primary" href="<%=basePath + "email.do"%>">查看密保邮箱</a>
+                        </div>
+                    </div>
+                </div>
             </div>
         </div>
     </div>

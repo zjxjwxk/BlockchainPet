@@ -83,7 +83,7 @@
                             <span class="badge badge-primary">普通</span>
                             <span class="badge badge-light">第0代</span>
                             <div>宠物1号</div>
-                            <div class="pet-price">1999.00微</div>
+                            <div class="text-blue">1999.00微</div>
                         </div>
                     </div>
                     <div class="card pet">
@@ -92,7 +92,7 @@
                             <span class="badge badge-primary">普通</span>
                             <span class="badge badge-light">第0代</span>
                             <div>宠物1号</div>
-                            <div class="pet-price">1999.00微</div>
+                            <div class="text-blue">1999.00微</div>
                         </div>
                     </div>
                     <div class="card pet">
@@ -101,7 +101,7 @@
                             <span class="badge badge-primary">普通</span>
                             <span class="badge badge-light">第0代</span>
                             <div>宠物1号</div>
-                            <div class="pet-price">1999.00微</div>
+                            <div class="text-blue">1999.00微</div>
                         </div>
                     </div>
                     <div class="card pet">
@@ -110,7 +110,7 @@
                             <span class="badge badge-primary">普通</span>
                             <span class="badge badge-light">第0代</span>
                             <div>宠物1号</div>
-                            <div class="pet-price">1999.00微</div>
+                            <div class="text-blue">1999.00微</div>
                         </div>
                     </div>
                     <div class="card pet">
@@ -119,7 +119,7 @@
                             <span class="badge badge-primary">普通</span>
                             <span class="badge badge-light">第0代</span>
                             <div>宠物1号</div>
-                            <div class="pet-price">1999.00微</div>
+                            <div class="text-blue">1999.00微</div>
                         </div>
                     </div>
                     <div class="card pet">
@@ -128,7 +128,7 @@
                             <span class="badge badge-primary">普通</span>
                             <span class="badge badge-light">第0代</span>
                             <div>宠物1号</div>
-                            <div class="pet-price">1999.00微</div>
+                            <div class="text-blue">1999.00微</div>
                         </div>
                     </div>
                     <div class="card pet">
@@ -137,7 +137,7 @@
                             <span class="badge badge-primary">普通</span>
                             <span class="badge badge-light">第0代</span>
                             <div>宠物1号</div>
-                            <div class="pet-price">1999.00微</div>
+                            <div class="text-blue">1999.00微</div>
                         </div>
                     </div>
                     <div class="card pet">
@@ -146,7 +146,7 @@
                             <span class="badge badge-primary">普通</span>
                             <span class="badge badge-light">第0代</span>
                             <div>宠物1号</div>
-                            <div class="pet-price">1999.00微</div>
+                            <div class="text-blue">1999.00微</div>
                         </div>
                     </div>
                     <div class="card pet">
@@ -155,7 +155,7 @@
                             <span class="badge badge-primary">普通</span>
                             <span class="badge badge-light">第0代</span>
                             <div>宠物1号</div>
-                            <div class="pet-price">1999.00微</div>
+                            <div class="text-blue">1999.00微</div>
                         </div>
                     </div>
                     <div class="card pet">
@@ -164,7 +164,7 @@
                             <span class="badge badge-primary">普通</span>
                             <span class="badge badge-light">第0代</span>
                             <div>宠物1号</div>
-                            <div class="pet-price">1999.00微</div>
+                            <div class="text-blue">1999.00微</div>
                         </div>
                     </div>
                     <div class="card pet">
@@ -173,7 +173,7 @@
                             <span class="badge badge-primary">普通</span>
                             <span class="badge badge-light">第0代</span>
                             <div>宠物1号</div>
-                            <div class="pet-price">1999.00微</div>
+                            <div class="text-blue">1999.00微</div>
                         </div>
                     </div>
                     <div class="card pet">
@@ -182,7 +182,7 @@
                             <span class="badge badge-primary">普通</span>
                             <span class="badge badge-light">第0代</span>
                             <div>宠物1号</div>
-                            <div class="pet-price">1999.00微</div>
+                            <div class="text-blue">1999.00微</div>
                         </div>
                     </div>
                     <div class="card pet">
@@ -191,7 +191,7 @@
                             <span class="badge badge-primary">普通</span>
                             <span class="badge badge-light">第0代</span>
                             <div>宠物1号</div>
-                            <div class="pet-price">1999.00微</div>
+                            <div class="text-blue">1999.00微</div>
                         </div>
                     </div>
                 </div>

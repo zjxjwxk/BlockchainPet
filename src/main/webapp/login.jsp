@@ -85,11 +85,11 @@
                     <form id="login-form" action="login.do">
                         <div class="form-group">
                             <label for="username">用户名</label>
-                            <input type="text" class="form-control" id="username" name="username" aria-describedby="userHelp" placeholder="请输入用户名">
+                            <input type="text" class="form-control" id="username" name="username" placeholder="请输入用户名">
                         </div>
                         <div class="form-group">
                             <label for="password">密码</label>
-                            <input type="password" class="form-control" id="password" name="password" aria-describedby="passwordHelp" placeholder="请输入用户密码">
+                            <input type="password" class="form-control" id="password" name="password" placeholder="请输入用户密码">
                         </div>
                         <div class="form-group" id="forget">
                             <a href="#">忘记密码</a>&nbsp;&nbsp;
