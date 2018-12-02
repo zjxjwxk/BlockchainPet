@@ -26,12 +26,11 @@ public class LoginServlet extends HttpServlet {
 
         LoginService loginService = new LoginService();
         if (!loginService.checkLogin(username, password)) {
-            req.setAttribute("loginError", "用户名或密码错误！");
-            req.getRequestDispatcher("login.jsp").forward(req, resp);
+            resp.sendRedirect("error.html");
         } else {
             HttpSession session = req.getSession();
             session.setAttribute("username", username);
-            req.getRequestDispatcher("receive.jsp").forward(req, resp);
+            req.getRequestDispatcher("/information.do").forward(req, resp);
         }
     }
 }
