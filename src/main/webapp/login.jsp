@@ -2,16 +2,6 @@
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-<%
-    String loginErrorMessage = (String) request.getAttribute("loginError");
-    if (loginErrorMessage != null) {
-%>
-    <script type="text/javascript">
-        alert("<%=loginErrorMessage %>");
-    </script>
-<%
-    }
-%>
 <%@page contentType="text/html; charset=utf-8" %>
 <!DOCTYPE html>
 <html>
@@ -38,9 +28,6 @@
                         <a class="nav-link" href="index.jsp">狗狗集市</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">我的狗窝</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="receive.jsp">免费领养</a>
                     </li>
                     <li class="nav-item">
@@ -52,10 +39,10 @@
                         <a class="nav-link" href="register.jsp">注册</a>
                     </li>
                     <%
-                        if (session.getAttribute("username") != null) {
+                        if (session.getAttribute("nikename") != null) {
                     %>
                     <li class="nav-item dropdown active">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" href="" aria-haspopup="true" aria-expanded="false"><%=session.getAttribute("username")%></a>
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" href="" aria-haspopup="true" aria-expanded="false"><%=session.getAttribute("nikename")%></a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="profile.jsp">个人中心</a>
                             <div class="dropdown-divider"></div>
@@ -83,19 +70,21 @@
             <div class="card-body">
                 <div class="container" style="width: 500px;">
                     <form id="login-form" action="login.do">
-                        <div class="form-group">
+                        <div class="form-group col-md-9">
                             <label for="username">用户名</label>
                             <input type="text" class="form-control" id="username" name="username" placeholder="请输入用户名">
                         </div>
-                        <div class="form-group">
+                        <div class="form-group col-md-9">
                             <label for="password">密码</label>
                             <input type="password" class="form-control" id="password" name="password" placeholder="请输入用户密码">
                         </div>
-                        <div class="form-group" id="forget">
+                        <div class="form-group col-md-9" id="forget">
                             <a href="#">忘记密码</a>&nbsp;&nbsp;
                             <a href="register.jsp">立即注册</a>
                         </div>
-                        <button type="submit" class="btn btn-primary" onclick="return login()">登陆</button>
+                        <div class="form-group col-md-9">
+                            <button type="submit" class="btn btn-primary" onclick="return login()">登陆</button>
+                        </div>
                     </form>
                 </div>
             </div>

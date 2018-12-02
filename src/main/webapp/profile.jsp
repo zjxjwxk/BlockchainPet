@@ -1,3 +1,4 @@
+<%@ page import="model.Pet" %>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -32,9 +33,6 @@
                         <a class="nav-link" href="index.jsp">狗狗集市</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">我的狗窝</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="receive.jsp">免费领养</a>
                     </li>
                     <li class="nav-item">
@@ -46,10 +44,10 @@
                         <a class="nav-link" href="register.jsp">注册</a>
                     </li>
                     <%
-                        if (session.getAttribute("username") != null) {
+                        if (session.getAttribute("nikename") != null) {
                     %>
                     <li class="nav-item dropdown active">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" href="" aria-haspopup="true" aria-expanded="false"><%=session.getAttribute("username")%></a>
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" href="" aria-haspopup="true" aria-expanded="false"><%=session.getAttribute("nikename")%></a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="profile.jsp">个人中心</a>
                             <div class="dropdown-divider"></div>
@@ -78,7 +76,7 @@
                 <div id="profile-avatar" class="media">
                     <img id="avatar" class="mr-3" src="resources/img/12.png" alt="Generic placeholder image">
                     <div class="media-body">
-                        <h5 class="mt-0"><%= session.getAttribute("username") %></h5>
+                        <h5 class="mt-0"><%= session.getAttribute("nikename") %></h5>
                         1000微积分
                     </div>
                 </div>
@@ -96,69 +94,23 @@
                 <div class="tab-content">
                     <div class="tab-pane fade show active" id="my-pets" role="tabpanel">
                         <div class="row">
+                            <%
+                                Pet[] pets = (Pet[]) session.getAttribute("userPets");
+                                for (Pet pet :
+                                        pets) {
+                            %>
                             <div class="card pet">
-                                <img class="card-img-top" src="resources/img/1.png">
+                                <img class="card-img-top" src="<%= pet.getImgPath()%>">
                                 <div class="card-body">
-                                    <span class="badge badge-primary">普通</span>
-                                    <span class="badge badge-light">第0代</span>
-                                    <div>宠物1号</div>
+                                    <span class="badge badge-primary"><%= pet.getQuality()%></span>
+                                    <span class="badge badge-light">第<%= pet.getGeneration()%>代</span>
+                                    <div><%= pet.getName()%>&nbsp;<%= pet.getId()%></div>
                                     <div class="text-blue">1999.00微</div>
                                 </div>
                             </div>
-                            <div class="card pet">
-                                <img class="card-img-top" src="resources/img/1.png">
-                                <div class="card-body">
-                                    <span class="badge badge-primary">普通</span>
-                                    <span class="badge badge-light">第0代</span>
-                                    <div>宠物1号</div>
-                                    <div class="text-blue">1999.00微</div>
-                                </div>
-                            </div>
-                            <div class="card pet">
-                                <img class="card-img-top" src="resources/img/1.png">
-                                <div class="card-body">
-                                    <span class="badge badge-primary">普通</span>
-                                    <span class="badge badge-light">第0代</span>
-                                    <div>宠物1号</div>
-                                    <div class="text-blue">1999.00微</div>
-                                </div>
-                            </div>
-                            <div class="card pet">
-                                <img class="card-img-top" src="resources/img/1.png">
-                                <div class="card-body">
-                                    <span class="badge badge-primary">普通</span>
-                                    <span class="badge badge-light">第0代</span>
-                                    <div>宠物1号</div>
-                                    <div class="text-blue">1999.00微</div>
-                                </div>
-                            </div>
-                            <div class="card pet">
-                                <img class="card-img-top" src="resources/img/1.png">
-                                <div class="card-body">
-                                    <span class="badge badge-primary">普通</span>
-                                    <span class="badge badge-light">第0代</span>
-                                    <div>宠物1号</div>
-                                    <div class="text-blue">1999.00微</div>
-                                </div>
-                            </div>
-                            <div class="card pet">
-                                <img class="card-img-top" src="resources/img/1.png">
-                                <div class="card-body">
-                                    <span class="badge badge-primary">普通</span>
-                                    <span class="badge badge-light">第0代</span>
-                                    <div>宠物1号</div>
-                                    <div class="text-blue">1999.00微</div>
-                                </div>
-                            </div>
-                            <div class="card pet">
-                                <img class="card-img-top" src="resources/img/1.png">
-                                <div class="card-body">
-                                    <span class="badge badge-primary">普通</span>
-                                    <span class="badge badge-light">第0代</span>
-                                    <div>宠物1号</div>
-                                    <div class="text-blue">1999.00微</div>
-                                </div>
-                            </div>
+                            <%
+                                }
+                            %>
                         </div>
                     </div>
                     <div class="tab-pane fade" id="my-order" role="tabpanel"></div>

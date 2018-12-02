@@ -28,9 +28,6 @@
                         <a class="nav-link" href="index.jsp">狗狗集市</a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#">我的狗窝</a>
-                    </li>
-                    <li class="nav-item">
                         <a class="nav-link" href="receive.jsp">免费领养</a>
                     </li>
                     <li class="nav-item">
@@ -42,10 +39,10 @@
                         <a class="nav-link" href="register.jsp">注册</a>
                     </li>
                     <%
-                        if (session.getAttribute("username") != null) {
+                        if (session.getAttribute("nikename") != null) {
                     %>
                     <li class="nav-item dropdown active">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" href="" aria-haspopup="true" aria-expanded="false"><%=session.getAttribute("username")%></a>
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" href="" aria-haspopup="true" aria-expanded="false"><%=session.getAttribute("nikename")%></a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="profile.jsp">个人中心</a>
                             <div class="dropdown-divider"></div>

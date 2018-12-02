@@ -27,9 +27,6 @@
                     <li class="nav-item">
                         <a class="nav-link" href="index.jsp">狗狗集市</a>
                     </li>
-                    <li class="nav-item">
-                        <a class="nav-link" href="#">我的狗窝</a>
-                    </li>
                     <li class="nav-item active">
                         <a class="nav-link" href="receive.jsp">免费领养</a>
                     </li>
@@ -42,10 +39,10 @@
                         <a class="nav-link" href="register.jsp">注册</a>
                     </li>
                     <%
-                        if (session.getAttribute("username") != null) {
+                        if (session.getAttribute("nikename") != null) {
                     %>
                     <li class="nav-item dropdown active">
-                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" href="" aria-haspopup="true" aria-expanded="false"><%=session.getAttribute("username")%></a>
+                        <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" href="" aria-haspopup="true" aria-expanded="false"><%=session.getAttribute("nikename")%></a>
                         <div class="dropdown-menu">
                             <a class="dropdown-item" href="profile.jsp">个人中心</a>
                             <div class="dropdown-divider"></div>
@@ -73,15 +70,15 @@
             <div class="card-body">
                 <img id="receive-bg" src="resources/img/bg1.png"/>
                 <div id="receive">
-                    <div id="receive-text-1">
+                    <div>
                         <h3><b>可爱</b></h3>
                         <h3><b>唯一</b></h3>
                         <h3><b>值得收藏</b></h3>
                     </div>
-                    <div id="receive-text-2">
+                    <div id="receive-text">
                         <p>世界上总有属于你的唯一<br/>我在云端，等待你的陪伴</p>
                     </div>
-                    <a class="btn btn-primary" href="<%=basePath + "receive.do"%>">免费领养</a>
+                    <a class="btn btn-primary" href="<%=basePath + "guess-number.do"%>">免费领养</a>
                 </div>
             </div>
         </div>
