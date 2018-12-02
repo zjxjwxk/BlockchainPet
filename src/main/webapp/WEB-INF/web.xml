@@ -58,4 +58,23 @@
      <servlet-name>EmailServlet</servlet-name>
      <url-pattern>/email.do</url-pattern>
    </servlet-mapping>
+
+  <servlet>
+    <servlet-name>InformationServlet</servlet-name>
+    <servlet-class>servlet.InformationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>InformationServlet</servlet-name>
+    <url-pattern>/information.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>GuessNumberServlet</servlet-name>
+    <servlet-class>servlet.GuessNumberServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>GuessNumberServlet</servlet-name>
+    <url-pattern>/guess-number.do</url-pattern>
+  </servlet-mapping>
+
 </web-app>
