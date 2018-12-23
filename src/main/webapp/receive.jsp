@@ -1,3 +1,6 @@
+<%@ page import="model.Pet" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
@@ -78,7 +81,19 @@
                     <div id="receive-text">
                         <p>世界上总有属于你的唯一<br/>我在云端，等待你的陪伴</p>
                     </div>
+                    <%
+                        List<Pet> pets = (ArrayList<Pet>) session.getAttribute("userPets");
+                        if (pets != null && pets.size() > 0) {
+                    %>
+                    <div>您已经领养过一只莱茨狗了，请前往<a href="profile.jsp">个人中心</a>查看。</div>
+                    <%
+                        } else {
+                    %>
                     <a class="btn btn-primary" href="<%=basePath + "guess-number.do"%>">免费领养</a>
+                    <%
+                        }
+                    %>
+
                 </div>
             </div>
         </div>

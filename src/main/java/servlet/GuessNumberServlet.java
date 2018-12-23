@@ -52,7 +52,7 @@ public class GuessNumberServlet extends HttpServlet {
             int guessNumber = Integer.parseInt(req.getParameter("guessNumber"));
             int realNumber = (Integer) session.getAttribute("realNumber");
             if (guessNumber == realNumber) {
-                generateQuality();
+                generateQuality(session);
                 req.setAttribute("guessResult", "猜对了！第0代莱茨狗已生成！");
                 req.getRequestDispatcher("receive-success.jsp").forward(req, resp);
             } else if (guessNumber > realNumber) {
@@ -94,7 +94,7 @@ public class GuessNumberServlet extends HttpServlet {
     /**
      * 根据基本属性的稀有个数生成等级
      */
-    public void generateQuality(){
+    private void generateQuality(HttpSession session){
         Map<String, Integer> basicQualitys = this.initialPet.getBasicQualitys();
         int rareCount = 0;
         for (Map.Entry<String, Integer> quality :
@@ -116,5 +116,6 @@ public class GuessNumberServlet extends HttpServlet {
         } else if (rareCount == 8) {
             this.initialPet.setQuality("传说");
         }
+        InformationServlet.addUserPet((String) session.getAttribute("username"), initialPet);
     }
 }
