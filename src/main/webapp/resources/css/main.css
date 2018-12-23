@@ -17,6 +17,15 @@ body {
     color: #0084ff;
 }
 
+.pet-img{
+    width: 200px;
+    height: 200px;
+}
+
+.generate-text{
+    margin: 30px auto;
+}
+
 #sort a{
     color: rgba(0,0,0,.5);
     text-decoration: none;
@@ -51,10 +60,6 @@ body {
     margin: 30px 0;
 }
 
-#generate-text{
-    margin: 30px auto;
-}
-
 #avatar{
     width: 50px;
     height: 50px;
@@ -71,3 +76,13 @@ body {
 #my-email-div{
     margin: 30px 40px;
 }
+
+#info-div{
+    color: #696969;
+    margin: 50px 20%;
+}
+
+#pet-div{
+    margin: 0 0 0 32%;
+}
+
