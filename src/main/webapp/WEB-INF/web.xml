@@ -77,4 +77,22 @@
     <url-pattern>/guess-number.do</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>PetInfoServlet</servlet-name>
+    <servlet-class>servlet.PetInfoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PetInfoServlet</servlet-name>
+    <url-pattern>/pet-information.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>ChangePetNameServlet</servlet-name>
+    <servlet-class>servlet.ChangePetNameServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>ChangePetNameServlet</servlet-name>
+    <url-pattern>/change-pet-name.do</url-pattern>
+  </servlet-mapping>
+
 </web-app>
