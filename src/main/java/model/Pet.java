@@ -2,6 +2,7 @@ package model;
 
 import java.util.HashMap;
 import java.util.Map;
+import java.util.Random;
 
 /**
  * @author zjxjwxk
@@ -27,6 +28,28 @@ public class Pet {
      * 基本属性对应的稀有度，1代表稀有，0代表普通
      */
     private Map<String, Integer> basicQualitys;
+
+    public Pet() {
+        Random random = new Random();
+
+        this.name = "小莱";
+        // id 为 1~99999999
+        this.id = random.nextInt(99999999) + 1;
+        this.quality = "普通";
+        this.generation = 0;
+        // img为1~13.png
+        this.imgPath = "resources/img/" + (random.nextInt(13) + 1) + ".png";
+        this.bodyType = "招风耳";
+        this.eye = "小惊讶";
+        this.mouth = "达利胡";
+        this.bodyColor = "鹅黄";
+        this.pattern = "斑马纹";
+        this.eyeColor = "眼睛色";
+        this.bellyColor = "异光蓝";
+        this.patternColor = "紫灰";
+
+        basicQualitys = new HashMap<>();
+    }
 
     public Pet(String name, Integer id, String quality, Integer generation,
                String imgPath, String bodyType, String eye, String mouth,
