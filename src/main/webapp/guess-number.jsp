@@ -57,7 +57,7 @@
                 <li class="nav-item dropdown active">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" href="" aria-haspopup="true" aria-expanded="false"><%=session.getAttribute("nikename")%></a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="profile.jsp">个人中心</a>
+                        <a class="dropdown-item" href="information.do">个人中心</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="<%=basePath + "exit.do"%>">退出</a>
                     </div>
@@ -91,7 +91,7 @@
                     以下是0代莱茨狗的初始属性，每猜一次数字，莱茨狗的8项属性就会随机变化哦！系统已经随机生成了一个1~100的数，快猜猜看吧！
                 </div>
                 <div>
-                    <table width="500px" id="generate-text">
+                    <table width="500px" class="generate-text">
                             <tr>
                                 <th style="font-size: 18px; ">属性</th>
                             </tr>

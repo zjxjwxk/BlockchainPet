@@ -57,7 +57,7 @@
                 <li class="nav-item dropdown active">
                     <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" href="" aria-haspopup="true" aria-expanded="false"><%=session.getAttribute("nikename")%></a>
                     <div class="dropdown-menu">
-                        <a class="dropdown-item" href="profile.jsp">个人中心</a>
+                        <a class="dropdown-item" href="information.do">个人中心</a>
                         <div class="dropdown-divider"></div>
                         <a class="dropdown-item" href="<%=basePath + "exit.do"%>">退出</a>
                     </div>
@@ -86,7 +86,7 @@
                 <h3><b>领养成功</b></h3>
                 <div>您的第0代莱茨狗等级及属性如下：</div>
                 <div>
-                    <table width="500px" id="generate-text">
+                    <table width="500px" class="generate-text">
                         <tr>
                             <th colspan="2" style="font-size: 18px; padding: 0 30%;">等级  <span style="color: #0084ff;"><%= initialPet.getQuality()%></span></th>
                         </tr>

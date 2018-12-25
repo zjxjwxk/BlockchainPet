@@ -51,7 +51,7 @@
                     <li class="nav-item dropdown active">
                         <a class="nav-link dropdown-toggle" data-toggle="dropdown" role="button" href="" aria-haspopup="true" aria-expanded="false"><%=session.getAttribute("nikename")%></a>
                         <div class="dropdown-menu">
-                            <a class="dropdown-item" href="profile.jsp">个人中心</a>
+                            <a class="dropdown-item" href="information.do">个人中心</a>
                             <div class="dropdown-divider"></div>
                             <a class="dropdown-item" href="<%=basePath + "exit.do"%>">退出</a>
                         </div>
