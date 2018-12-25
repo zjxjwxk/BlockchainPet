@@ -6,6 +6,13 @@
     if (session.getAttribute("username") == null) {
         response.sendRedirect("login.jsp");
     }
+
+    String changePetNameMsg = (String) request.getAttribute("changePetNameMsg");
+    if (changePetNameMsg != null) {
+    %>
+        <script>alert("<%= changePetNameMsg%>")</script>
+    <%
+    }
 %>
 <%@page contentType="text/html; charset=utf-8" %>
 <!DOCTYPE html>
@@ -97,7 +104,7 @@
                             </form>
                         </div>
                     </div>
-                    <table width="500px" id="generate-text">
+                    <table width="500px" class="generate-text">
                         <tr>
                             <th colspan="2" style="font-size: 18px; padding: 0 30%;">等级  <span style="color: #0084ff;"><%= pet.getQuality()%></span></th>
                         </tr>

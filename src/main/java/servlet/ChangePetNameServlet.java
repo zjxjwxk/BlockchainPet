@@ -27,6 +27,7 @@ public class ChangePetNameServlet extends HttpServlet {
         String petName = req.getParameter("petName");
         Integer petId = Integer.valueOf(req.getParameter("petId"));
         InformationServlet.changePetName(username, petId, petName);
+        req.setAttribute("changePetNameMsg", "修改狗狗名字成功！");
         req.getRequestDispatcher("pet-information.do?petId=" + petId).forward(req, resp);
     }
 }

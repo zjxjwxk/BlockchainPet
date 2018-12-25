@@ -125,10 +125,10 @@
                     </div>
                     <div class="tab-pane fade" id="multiplication" role="tabpanel">
                         <%
-                            Pet pet1 = (Pet) request.getAttribute("pet1");
-                            Pet pet2 = (Pet) request.getAttribute("pet2");
+                            Pet pet1 = (Pet) session.getAttribute("pet1");
+                            Pet pet2 = (Pet) session.getAttribute("pet2");
                         %>
-                        <form action="" method="post">
+                        <form action="multiplication.do" method="post">
                             <div class="row">
                                 <div class="col-md-4 offset-1">
                                     <div style="margin: 10px 10px 10px 70px;">
