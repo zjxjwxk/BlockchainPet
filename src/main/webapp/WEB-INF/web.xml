@@ -95,4 +95,13 @@
     <url-pattern>/change-pet-name.do</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>MultiplicationServlet</servlet-name>
+    <servlet-class>servlet.MultiplicationServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MultiplicationServlet</servlet-name>
+    <url-pattern>/multiplication.do</url-pattern>
+  </servlet-mapping>
+
 </web-app>

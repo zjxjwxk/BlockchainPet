@@ -72,16 +72,16 @@ public class InformationServlet extends HttpServlet {
 
         session.setAttribute("nikename", nikename.get(username));
         session.setAttribute("userPets", userPets.get(username));
-        req.setAttribute("pet1", pet1);
-        req.setAttribute("pet2", pet2);
+        session.setAttribute("pet1", pet1);
+        session.setAttribute("pet2", pet2);
         req.getRequestDispatcher("profile.jsp").forward(req, resp);
     }
 
-    static void addUserPet(String username, Pet pet) {
+    public static void addUserPet(String username, Pet pet) {
         userPets.get(username).add(pet);
     }
 
-    static Pet getUserPet(String username, Integer petId) {
+    public static Pet getUserPet(String username, Integer petId) {
         List<Pet> pets = userPets.get(username);
         if (pets != null && pets.size() > 0) {
             for (Pet pet:
