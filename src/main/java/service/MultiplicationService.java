@@ -1,9 +1,7 @@
 package service;
 
 import model.Pet;
-import servlet.InformationServlet;
 
-import javax.servlet.http.HttpSession;
 import java.util.*;
 
 /**
@@ -94,6 +92,7 @@ public class MultiplicationService {
         }
 
         retPet.setBasicQualitys(basicQualityList);
+        retPet.setGeneration(pet1.getGeneration() + 1);
         return retPet;
     }
 

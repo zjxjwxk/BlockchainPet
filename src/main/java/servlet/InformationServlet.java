@@ -31,7 +31,7 @@ public class InformationServlet extends HttpServlet {
 //                "招风耳", "小惊讶", "达利胡", "鹅黄",
 //                "斑马纹", "眼睛色", "异光蓝", "紫灰"));
 
-        pet1 = new Pet("小莱", 15550790, "普通", 0, "resources/img/1.png",
+        pet1 = new Pet("小智", 15550790, "普通", 0, "resources/img/12.png",
                 "飞机头", "小颓废", "橄榄", "米色",
                 "冰凌", "雪青", "变异橙", "赭石");
         Map<String, Integer> basicQualitys1 = new HashMap<>();
@@ -45,7 +45,7 @@ public class InformationServlet extends HttpServlet {
         basicQualitys1.put("patternColor", 0);
         pet1.setBasicQualitys(basicQualitys1);
 
-        pet2 = new Pet("小莱", 17436838, "卓越", 0, "resources/img/1.png",
+        pet2 = new Pet("小美", 17436838, "卓越", 0, "resources/img/13.png",
                 "菠萝头", "小可爱", "美滋滋", "豆绿",
                 "两道杠", "异域红", "白色", "紫灰");
         Map<String, Integer> basicQualitys2 = new HashMap<>();

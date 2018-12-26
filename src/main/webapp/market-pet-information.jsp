@@ -2,17 +2,6 @@
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
-
-    if (session.getAttribute("username") == null) {
-        response.sendRedirect("login.jsp");
-    }
-
-    String changePetNameMsg = (String) request.getAttribute("changePetNameMsg");
-    if (changePetNameMsg != null) {
-    %>
-        <script>alert("<%= changePetNameMsg%>")</script>
-    <%
-    }
 %>
 <%@page contentType="text/html; charset=utf-8" %>
 <!DOCTYPE html>
@@ -39,7 +28,7 @@
                     <li class="nav-item">
                         <a class="nav-link" href="index.jsp">主页</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="pet-market.do">狗狗集市</a>
                     </li>
                     <li class="nav-item">
@@ -96,15 +85,9 @@
                                 <h5><span class="badge badge-primary"><%= pet.getQuality()%></span></h5>&nbsp;&nbsp;
                                 <h5><span class="badge badge-light">第<%= pet.getGeneration()%>代</span></h5>
                             </div>
-                            <form class="row form-inline" action="change-pet-name.do">
-                                <input type="hidden" name="petId" value="<%= pet.getId() %>">
-                                <div class="form-group">
-                                    <label>
-                                        <input class="form-control mx-sm-1" type="text" name="petName" value="<%= pet.getName()%>">
-                                    </label>
-                                    <input class="btn btn-primary" type="submit" value="修改名字">
-                                </div>
-                            </form>
+                            <div class="row" style="margin-left: 9px;">
+                                <%= pet.getName()%>&nbsp;&nbsp;<%= pet.getId()%>
+                            </div>
                         </div>
                     </div>
                     <table width="500px" class="generate-text">

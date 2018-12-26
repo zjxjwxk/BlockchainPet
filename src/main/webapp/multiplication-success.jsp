@@ -31,7 +31,10 @@
         <div class="collapse navbar-collapse">
             <ul class="navbar-nav mr-auto">
                 <li class="nav-item">
-                    <a class="nav-link" href="index.jsp">狗狗集市</a>
+                    <a class="nav-link" href="index.jsp">主页</a>
+                </li>
+                <li class="nav-item">
+                    <a class="nav-link" href="pet-market.do">狗狗集市</a>
                 </li>
                 <li class="nav-item active">
                     <a class="nav-link" href="receive.jsp">免费领养</a>

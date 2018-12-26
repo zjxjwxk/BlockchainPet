@@ -32,7 +32,10 @@
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav mr-auto">
                     <li class="nav-item">
-                        <a class="nav-link" href="index.jsp">狗狗集市</a>
+                        <a class="nav-link" href="index.jsp">主页</a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="pet-market.do">狗狗集市</a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link" href="receive.jsp">免费领养</a>
@@ -113,7 +116,11 @@
                                 <div class="card-body">
                                     <span class="badge badge-primary"><%= pet.getQuality()%></span>
                                     <span class="badge badge-light">第<%= pet.getGeneration()%>代</span>
-                                    <div><%= pet.getName()%>&nbsp;<%= pet.getId()%></div>
+                                    <div><%@include file="pet-name.jsp" %>&nbsp;
+                                        <jsp:include page="pet-id.jsp">
+                                            <jsp:param name="petId" value="<%= pet.getId() %>"/>
+                                        </jsp:include>
+                                    </div>
                                     <div class="text-blue">1999.00微</div>
                                 </div>
                             </div>

@@ -1,12 +1,16 @@
+<%@ page import="model.Pet" %>
+<%@ page import="java.util.List" %>
+<%@ page import="java.util.ArrayList" %>
 <%
     String path = request.getContextPath();
     String basePath = request.getScheme()+"://"+request.getServerName()+":"+request.getServerPort()+path+"/";
 %>
-<%@page contentType="text/html; charset=utf-8" %>
+<%@ page contentType="text/html; charset=utf-8" pageEncoding="utf-8"%>
 <!DOCTYPE html>
 <html>
 
 <head>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
     <title>区块链宠物</title>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, shrink-to-fit=no">
@@ -24,10 +28,10 @@
             </button>
             <div class="collapse navbar-collapse">
                 <ul class="navbar-nav mr-auto">
-                    <li class="nav-item active">
+                    <li class="nav-item">
                         <a class="nav-link" href="index.jsp">主页</a>
                     </li>
-                    <li class="nav-item">
+                    <li class="nav-item active">
                         <a class="nav-link" href="pet-market.do">狗狗集市</a>
                     </li>
                     <li class="nav-item">
@@ -66,15 +70,38 @@
         </div>
     </nav>
     <div class="container">
-        <div class="card">
+        <div class="card" style="padding-bottom: 0">
             <div class="card-header" style="background-color: #fff">
-                <b>主页</b>
+                <b>狗狗集市</b>
+                <div class="float-right" id="sort">
+                    <a href="#">稀有度 <i class="fas fa-sort"></i></a>
+                    <a href="#">价格 <i class="fas fa-sort"></i></a>
+                    <a href="#">时间 <i class="fas fa-sort"></i></a>
+                </div>
             </div>
             <div class="card-body">
-                <img id="receive-bg" src="resources/img/bg1.png"/>
-                <div style="margin: 10px 40px;">
-                    <h3><b>欢迎来到区块链宠物！</b></h3>
+                <div class="row">
+                    <%
+                        List<Pet> petList = (ArrayList<Pet>) session.getAttribute("petList");
+                        for (Pet pet :
+                                petList) {
+                    %>
+                    <div class="card pet">
+                        <a href="<%=basePath + "market-pet-information.do?petId=" + pet.getId()%>"><img class="card-img-top" src="<%= pet.getImgPath()%>"></a>
+                        <div class="card-body">
+                            <span class="badge badge-primary"><%= pet.getQuality() %></span>
+                            <span class="badge badge-light">第<%= pet.getGeneration() %>代</span>
+                            <div><%= pet.getName() + "  " + pet.getId() %></div>
+                            <div class="text-blue">1999.00微</div>
+                        </div>
+                    </div>
+                    <%
+                        }
+                    %>
                 </div>
+            </div>
+            <div class="card-footer">
+                <a class="btn btn-primary offset-5" href="addDog.jsp">添加狗狗</a>
             </div>
         </div>
     </div>

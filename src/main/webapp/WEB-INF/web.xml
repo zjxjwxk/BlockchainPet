@@ -104,4 +104,31 @@
     <url-pattern>/multiplication.do</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>PetMarketServlet</servlet-name>
+    <servlet-class>servlet.PetMarketServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>PetMarketServlet</servlet-name>
+    <url-pattern>/pet-market.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>AddPetToMarketServlet</servlet-name>
+    <servlet-class>servlet.AddPetToMarketServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>AddPetToMarketServlet</servlet-name>
+    <url-pattern>/add-pet-to-market.do</url-pattern>
+  </servlet-mapping>
+  
+  <servlet>
+    <servlet-name>MarketPetInformation</servlet-name>
+    <servlet-class>servlet.MarketPetInfoServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>MarketPetInformation</servlet-name>
+    <url-pattern>/market-pet-information.do</url-pattern>
+  </servlet-mapping>
+
 </web-app>

@@ -8,8 +8,8 @@ body {
 }
 
 .pet{
-    width: 200px;
-    height: 280px;
+    width: 165px;
+    height: 250px;
     margin: 0 0 10px 16px;
 }
 
@@ -19,7 +19,7 @@ body {
 
 .pet-img{
     width: 200px;
-    height: 200px;
+    height: 160px;
 }
 
 .generate-text{
