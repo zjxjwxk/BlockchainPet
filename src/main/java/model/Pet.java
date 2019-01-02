@@ -49,6 +49,15 @@ public class Pet {
         this.patternColor = "紫灰";
 
         basicQualitys = new HashMap<>();
+        this.basicQualitys = new HashMap<>();
+        basicQualitys.put("bodyType", 0);
+        basicQualitys.put("eye", 0);
+        basicQualitys.put("mouth", 1);
+        basicQualitys.put("bodyColor", 0);
+        basicQualitys.put("pattern", 1);
+        basicQualitys.put("eyeColor", 0);
+        basicQualitys.put("bellyColor", 1);
+        basicQualitys.put("patternColor", 0);
     }
 
     public Pet(String name, Integer id, String quality, Integer generation,
