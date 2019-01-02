@@ -6,7 +6,6 @@ import javax.servlet.ServletException;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.servlet.http.HttpSession;
 import java.io.IOException;
 import java.util.ArrayList;
 import java.util.List;
@@ -21,11 +20,9 @@ public class PetMarketServlet extends HttpServlet {
     @Override
     public void init(){
         petList = new ArrayList<>();
-        Pet pet = new Pet("小莱", 11008418, "卓越", 0, "resources/img/1.png",
-                "招风耳", "小惊讶", "达利胡", "鹅黄",
-                "斑马纹", "眼睛色", "异光蓝", "紫灰");
         int initialPetAmount = 10;
         for (int i = 0; i < initialPetAmount; i++) {
+            Pet pet = new Pet();
             petList.add(pet);
         }
     }
@@ -37,8 +34,7 @@ public class PetMarketServlet extends HttpServlet {
 
     @Override
     protected void doPost(HttpServletRequest req, HttpServletResponse resp) throws ServletException, IOException {
-        HttpSession session = req.getSession();
-        session.setAttribute("petList", petList);
+        req.getServletContext().setAttribute("petList", petList);
         req.getRequestDispatcher("browseDog.jsp").forward(req, resp);
     }
 
