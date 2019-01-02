@@ -8,6 +8,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 import java.io.IOException;
 import java.util.ArrayList;
+import java.util.Iterator;
 import java.util.List;
 
 /**
@@ -51,5 +52,24 @@ public class PetMarketServlet extends HttpServlet {
             }
         }
         return null;
+    }
+
+    public static void deletePet(Integer petId) {
+        Iterator iterator = petList.iterator();
+        while (iterator.hasNext()) {
+            if (((Pet) iterator.next()).getId().equals(petId)) {
+                iterator.remove();
+            }
+        }
+    }
+
+    public static void modifyPet(Integer petId, String petName, Integer generation) {
+        for (Pet pet:
+             petList) {
+            if (pet.getId().equals(petId)) {
+                pet.setName(petName);
+                pet.setGeneration(generation);
+            }
+        }
     }
 }

@@ -131,4 +131,21 @@
     <url-pattern>/market-pet-information.do</url-pattern>
   </servlet-mapping>
 
+  <servlet>
+    <servlet-name>deleteDog</servlet-name>
+    <servlet-class>servlet.deleteDog</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>deleteDog</servlet-name>
+    <url-pattern>/delete-pets-from-market.do</url-pattern>
+  </servlet-mapping>
+
+  <servlet>
+    <servlet-name>modifyDog</servlet-name>
+    <servlet-class>servlet.ModifyMarketPetServlet</servlet-class>
+  </servlet>
+  <servlet-mapping>
+    <servlet-name>modifyDog</servlet-name>
+    <url-pattern>/modify-market-pet.do</url-pattern>
+  </servlet-mapping>
 </web-app>

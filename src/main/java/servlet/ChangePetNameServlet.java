@@ -23,6 +23,7 @@ public class ChangePetNameServlet extends HttpServlet {
         if (session.getAttribute("username") == null) {
             req.getRequestDispatcher("login.jsp").forward(req, resp);
         }
+        req.setCharacterEncoding("utf-8");
         String username = (String) session.getAttribute("username");
         String petName = req.getParameter("petName");
         Integer petId = Integer.valueOf(req.getParameter("petId"));

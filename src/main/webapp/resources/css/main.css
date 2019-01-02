@@ -22,21 +22,40 @@ body {
     height: 160px;
 }
 
+.pet-img-small{
+    width: 163px;
+    height: 130px;
+}
+
+.pet-img-container{
+    position: relative;
+    width: 163px;
+    height: 130px;
+    float: left;
+}
+
 .generate-text{
     margin: 30px auto;
 }
 
-#sort a{
+#pet-change a{
+    margin-right: 30px;
+    font-size: 14px;
     color: rgba(0,0,0,.5);
     text-decoration: none;
-    margin-right: 20px;
 }
 
-#sort a:hover{
+#pet-change{
+    position: absolute;
+    bottom: -28px;
+    right: 0;
+}
+
+a:hover{
     color: rgba(0,0,0,.9);
 }
 
-#sort a:active{
+a:active{
     color: rgba(0,0,0,.9);
 }
 

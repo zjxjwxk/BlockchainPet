@@ -112,7 +112,7 @@
                                             pets) {
                             %>
                             <div class="card pet">
-                                <a href="<%=basePath + "pet-information.do?petId=" + pet.getId()%>"><img class="card-img-top" src="<%= pet.getImgPath()%>"></a>
+                                <a href="<%=basePath + "pet-information.do?petId=" + pet.getId()%>"><img class="card-img-top pet-img-small" src="<%= pet.getImgPath()%>"></a>
                                 <div class="card-body">
                                     <span class="badge badge-primary"><%= pet.getQuality()%></span>
                                     <span class="badge badge-light">第<%= pet.getGeneration()%>代</span>

@@ -69,25 +69,41 @@
             </div>
         </div>
     </nav>
-    <div class="container">
+    <form class="container" method="post" action="delete-pets-from-market.do">
         <div class="card" style="padding-bottom: 0">
             <div class="card-header" style="background-color: #fff">
                 <b>狗狗集市</b>
-                <div class="float-right" id="sort">
-                    <a href="#">稀有度 <i class="fas fa-sort"></i></a>
-                    <a href="#">价格 <i class="fas fa-sort"></i></a>
-                    <a href="#">时间 <i class="fas fa-sort"></i></a>
+                <div class="float-right">
+                    <a style="color: rgba(0,0,0,.5); text-decoration: none; margin-right: 20px;" href="#">稀有度 <i class="fas fa-sort"></i></a>
+                    <a style="color: rgba(0,0,0,.5); text-decoration: none; margin-right: 20px;" href="#">价格 <i class="fas fa-sort"></i></a>
+                    <a style="color: rgba(0,0,0,.5); text-decoration: none; margin-right: 20px;" href="#">时间 <i class="fas fa-sort"></i></a>
+                    <a class="btn btn-primary" href="addDog.jsp">添加狗狗</a>
+                    <button type="submit" class="btn btn-danger" onclick="return deletePetFromMarket()">删除狗狗</button>
                 </div>
             </div>
             <div class="card-body">
                 <div class="row">
                     <%
                         List<Pet> petList = (ArrayList<Pet>) application.getAttribute("petList");
-                        for (Pet pet :
-                                petList) {
+                        if (petList.size() == 0) {
+                    %>
+                    <div id="info-div">
+                        还没有狗狗上市！
+                    </div>
+                    <%
+                        } else {
+                            for (Pet pet :
+                                    petList) {
                     %>
                     <div class="card pet">
-                        <a href="<%=basePath + "market-pet-information.do?petId=" + pet.getId()%>"><img class="card-img-top" src="<%= pet.getImgPath()%>"></a>
+                        <div class="pet-img-container">
+                            <a href="<%=basePath + "market-pet-information.do?petId=" + pet.getId()%>"><img class="card-img-top pet-img-small" src="<%= pet.getImgPath()%>"></a>
+                            <div class="custom-control custom-checkbox" id="pet-change">
+                                <a href="<%=basePath + "modify-market-pet.do?petId=" + pet.getId()%>">修改</a>
+                                <input type="checkbox" class="custom-control-input" name="deleteId" value="<%= pet.getId() %>" id="<%= pet.getId() %>">
+                                <label class="custom-control-label" for="<%= pet.getId() %>">&nbsp;</label>
+                            </div>
+                        </div>
                         <div class="card-body">
                             <span class="badge badge-primary"><%= pet.getQuality() %></span>
                             <span class="badge badge-light">第<%= pet.getGeneration() %>代</span>
@@ -96,17 +112,16 @@
                         </div>
                     </div>
                     <%
+                            }
                         }
                     %>
                 </div>
             </div>
-            <div class="card-footer">
-                <a class="btn btn-primary offset-5" href="addDog.jsp">添加狗狗</a>
-            </div>
         </div>
-    </div>
+    </form>
     <script src="resources/js/jquery.min.js"></script>
     <script src="resources/js/bootstrap.min.js"></script>
+    <script src="resources/js/deletePets.js"></script>
 </body>
 
 </html>
