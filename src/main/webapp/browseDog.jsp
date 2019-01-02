@@ -82,7 +82,7 @@
             <div class="card-body">
                 <div class="row">
                     <%
-                        List<Pet> petList = (ArrayList<Pet>) session.getAttribute("petList");
+                        List<Pet> petList = (ArrayList<Pet>) application.getAttribute("petList");
                         for (Pet pet :
                                 petList) {
                     %>
